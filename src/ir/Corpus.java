@@ -37,6 +37,26 @@ public class Corpus {
 	}
 	
 	/**
+	 * This method get the total word count of all documents
+	 */
+	public int getTotalWordCount() {
+		
+		int totalWordCount = 0;
+		for (Document document : documents) {
+			totalWordCount += document.getWordCount();
+		}
+		
+		return totalWordCount;
+	}
+	
+	/**
+	 * This method get the total number of terms from all documents
+	 */
+	public int getNumOfTerms() {
+		return invertedIndex.keySet().size();
+	}
+	
+	/**
 	 * This method will create an inverted index.
 	 */
 	private void createInvertedIndex() {

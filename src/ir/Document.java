@@ -25,6 +25,8 @@ public class Document implements Comparable<Document> {
 	 */
 	private String filename;
 	
+	private int wordCount;
+	
 	/**
 	 * The constructor.
 	 * It takes in the name of a file to read.
@@ -34,6 +36,7 @@ public class Document implements Comparable<Document> {
 	public Document(String filename) {
 		this.filename = filename;
 		termFrequency = new HashMap<String, Integer>();
+		wordCount = 0;
 		
 		readFileAndPreProcess();
 	}
@@ -52,6 +55,7 @@ public class Document implements Comparable<Document> {
 			System.out.println("Reading file: " + filename + " and preprocessing");
 			
 			while (in.hasNext()) {
+				wordCount++;
 				String nextWord = in.next();
 				
 				String filteredWord = nextWord.replaceAll("[^A-Za-z0-9]", "").toLowerCase();
@@ -68,6 +72,14 @@ public class Document implements Comparable<Document> {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * Get word count
+	 * @return word count for document
+	 */
+	public int getWordCount() {
+		return wordCount;
 	}
 	
 	/**

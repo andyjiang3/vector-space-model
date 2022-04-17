@@ -147,6 +147,17 @@ public class VectorSpaceModelTester {
 		Double averageCosineSumCountry = cosineSumCountry/ numPairs;
 		System.out.println("Average Cosine Similarity (Country): " + averageCosineSumCountry);
 		
+		//Word Count
+		System.out.println();
+		System.out.println("Word Count for Pop Songs: " + corpusPop.getTotalWordCount());
+		System.out.println("Word Count for Hip Hop Songs: " + corpusHipHop.getTotalWordCount());
+		System.out.println("Word Count for Country Songs: " + corpusCountry.getTotalWordCount());
+		
+		//Num of Terms
+		System.out.println();
+		System.out.println("Num of Terms for Pop Songs: " + corpusPop.getNumOfTerms());
+		System.out.println("Num of Terms for Hip Hop Songs: " + corpusHipHop.getNumOfTerms());
+		System.out.println("Num of Terms for Country Songs: " + corpusCountry.getNumOfTerms());
 		
 		
 
